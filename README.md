@@ -1,4 +1,4 @@
 uInfo
 =====
 
-This class getting information about your IP, browser and OS.
+Showing information about your IP, browser and OS.
