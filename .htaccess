@@ -1,0 +1,3 @@
+AddDefaultCharset UTF-8
+RewriteEngine on
+RewriteRule ^(.*)image.jpg$ $1image.php
