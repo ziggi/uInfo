@@ -1,13 +1,43 @@
 <?php
+/**
+ * A uInfo class
+ *
+ * This class getting information about your IP, browser and OS.
+ *
+ * @author Sergey Marochkin <xziggix@gmail.com>
+ * @version 1.0
+ * @copyright 2012 Sergey Marochkin
+ * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3
+ */
 
 class uInfo {
+    /**
+     * A private variable
+     *
+     * @var string stores HTTP_USER_AGENT for the class
+     */
+    
 	private $user_agent;
 	
+    /**
+     * Sets $user_agent to a new HTTP_USER_AGENT value
+     *
+     * @param string $http_user_agent a HTTP_USER_AGENT
+     * @return void
+     */
+    
 	function __construct($http_user_agent)
 	{
 		$this->user_agent = $http_user_agent;
 	}
 	
+    /**
+     * Getting host information
+     * 
+     * @param string $in_param type of information about the host
+     * @return string your ip or hostname
+     */
+    
 	public function host($in_param)
 	{
 		$result = null;
@@ -24,14 +54,14 @@ class uInfo {
 		
 		return $result;
 	}
-	/*
-Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11
-Opera/9.80 (X11; Linux x86_64) Presto/2.12.388 Version/12.11
-Mozilla/5.0 (X11; Linux x86_64; rv:17.0) Gecko/20100101 Firefox/17.0
-Mozilla/5.0 (Linux; Android 4.2.1; Nexus 7 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166  Safari/535.19
-Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11
-Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.04506.648; .NET CLR 3.5.21022)
-	*/
+	
+    /**
+     * Getting browser information
+     * 
+     * @param string $in_param type of information about the browser
+     * @return string your browser name or version
+     */
+    
 	public function browser($in_param)
 	{
 		$result = null;
@@ -81,6 +111,13 @@ Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET4.0C; .NET4.0E; .NET
 		return $result;
 	}
 	
+    /**
+     * Getting operating system information
+     * 
+     * @param string $in_param type of information about the OS
+     * @return string your OS name or version
+     */
+    
 	public function os($in_param)
 	{
 		$result = null;
