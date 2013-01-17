@@ -158,7 +158,7 @@ class uInfo {
 				foreach ($os_version as $key => $value) {
 					if (preg_match("/".$key."/i", $this->user_agent)) {
 						if ($value == null) {
-							$result = preg_replace("/.*".$key." (.*)\;.*/", "$1", $this->user_agent);
+							$result = preg_replace("/.*".$key." ([0-9.]+)\;.*/", "$1", $this->user_agent);
 						} else {
 							$result = $value;
 						}
