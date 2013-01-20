@@ -17,30 +17,7 @@ a:active {
 	text-decoration: underline;
 }
 
-#footer {
-	float: right;
-	width: 100px;
-	padding: 5px;
-	margin: 20px;
-	opacity: 0.8;
-	background: #fefefe;
-	border: 1px solid #888;
-	text-align: center;
-	font-weight: bold;
-	-webkit-border-radius: 5px;
-	 -khtml-border-radius: 5px;
-	   -moz-border-radius: 5px;
-	        border-radius: 5px;
-}
-
-.info_table {
-	width: 50%;
-	margin: 0 auto;
-	margin-top: 130px;
-	margin-bottom: 130px;
-}
-
-.info_table table {
+.div_form table {
 	margin: 0 auto;
 }
 
@@ -48,6 +25,8 @@ a:active {
 	padding: 10px 0 10px 0;
 	background: #fefefe;
 	opacity: 0.8;
+	width: 500px;
+	margin-bottom: 10px;
 	-webkit-border-radius: 10px;
 	 -khtml-border-radius: 10px;
 	   -moz-border-radius: 10px;
@@ -105,5 +84,5 @@ a:active {
 
 .p_center {
 	text-align: center;
-	margin-bottom: 0px;
+	margin: 0px;
 }
