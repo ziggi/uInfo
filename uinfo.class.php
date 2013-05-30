@@ -5,7 +5,7 @@
  * This class getting information about your IP, browser and OS.
  *
  * @author Sergey Marochkin <xziggix@gmail.com>
- * @version 1.0
+ * @version 1.3
  * @copyright 2012 Sergey Marochkin
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3
  */

@@ -3,7 +3,7 @@
 include "uinfo.class.php";
 
 define("SITE_URL","http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]);
-define("ENGINE_VERSION","1.2");
+define("ENGINE_VERSION","1.3");
 
 $user = new uInfo($_SERVER["HTTP_USER_AGENT"]);
 
