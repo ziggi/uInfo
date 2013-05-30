@@ -67,6 +67,7 @@ class uInfo {
 		$result = null;
 		$u_agent = $this->user_agent;
 		$browser_name = array(
+			"YaBrowser" => "Яндекс.Браузер",
 			"Chrome" => "Google Chrome",
 			"MSIE" => "Internet Explorer",
 			"Firefox" => "Mozilla Firefox",
@@ -74,6 +75,7 @@ class uInfo {
 			"Opera" => "Opera",
 		);
 		$browser_version = array(
+			"YaBrowser" => 1,
 			"Chrome" => 1,
 			"MSIE" => 1,
 			"Firefox" => 1,
