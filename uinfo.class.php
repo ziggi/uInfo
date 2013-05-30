@@ -125,6 +125,7 @@ class uInfo {
 		$result = null;
 		$os_name = array(
 			"linux" => "GNU/Linux",
+			"ubuntu" => "Ubuntu",
 			"mac_powerpc" => "Mac OS 9",
 			"macintosh|mac os x|os x" => "OS X",
 			"windows|win32" => "Windows",
