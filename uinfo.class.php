@@ -131,9 +131,9 @@ class uInfo {
 			"windows|win32" => "Windows",
 			"android" => "Android",
 			"blackberry" => "BlackBerry",
-			"ipod" => "iOS for iPod",
-			"ipad" => "iOS for iPad",
-			"iphone" => "iOS for iPhone",
+			"ipod" => "iOS(iPod)",
+			"ipad" => "iOS(iPad)",
+			"iphone" => "iOS(iPhone)",
 		);
 		$os_version = array(
 			"windows 95" => "95",
@@ -145,6 +145,9 @@ class uInfo {
 			"Windows NT 6.1" => "7",
 			"Windows NT 6.2" => "8",
 			"Android" => null,
+			"CPU OS" => null,
+			"CPU iPhone OS" => null,
+			"CPU iPod OS" => null,
 		);
 		
 		
@@ -161,7 +164,8 @@ class uInfo {
 				foreach ($os_version as $key => $value) {
 					if (preg_match("/".$key."/i", $this->user_agent)) {
 						if ($value == null) {
-							$result = preg_replace("/.*".$key." ([0-9.]+)\;.*/", "$1", $this->user_agent);
+							$result = preg_replace("/.*".$key." ([0-9._]+)[\;\ ].*/", "$1", $this->user_agent);
+							$result = str_replace("_", ".", $result);
 						} else {
 							$result = $value;
 						}
