@@ -5,7 +5,7 @@
  * This class getting information about your IP, browser and OS.
  *
  * @author Sergey Marochkin <xziggix@gmail.com>
- * @version 1.4
+ * @version 1.5
  * @copyright 2012 Sergey Marochkin
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3
  */
@@ -69,19 +69,25 @@ class uInfo {
 		$browser_name = array(
 			"OPR" => "Opera",
 			"YaBrowser" => "Яндекс.Браузер",
+			"UCBrowser" => "UC Browser",
+			"CriOS" => "Google Chrome",
 			"Chrome" => "Google Chrome",
 			"MSIE" => "Internet Explorer",
 			"Firefox" => "Mozilla Firefox",
 			"Safari" => "Safari",
+			"Opera Mini" => "Opera Mini",
 			"Opera" => "Opera",
 		);
 		$browser_version = array(
 			"OPR" => 1,
 			"YaBrowser" => 1,
+			"UCBrowser" => 1,
+			"CriOS" => 1,
 			"Chrome" => 1,
 			"MSIE" => 1,
 			"Firefox" => 1,
 			"Safari" => 1,
+			"Mini" => 1, // opera mini
 			"Opera" => -1,
 		);
 		
@@ -168,7 +174,11 @@ class uInfo {
 					if (preg_match("/".$key."/i", $this->user_agent)) {
 						if ($value == null) {
 							$result = preg_replace("/.*".$key." ([0-9._]+)[\;\ \)].*/", "$1", $this->user_agent);
-							$result = str_replace("_", ".", $result);
+							if ($result == $this->user_agent) {
+								$result = null;
+							} else {
+								$result = str_replace("_", ".", $result);
+							}
 						} else {
 							$result = $value;
 						}
