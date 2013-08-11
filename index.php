@@ -53,7 +53,7 @@ $user = new uInfo($_SERVER["HTTP_USER_AGENT"]);
 			</div>
 			<div class="link">
 				<div class="link_text">BB code:</div>
-				<textarea onClick="select()">[BB]<?=SITE_URL?>image.jpg[/BB]</textarea>
+				<textarea onClick="select()">[IMG]<?=SITE_URL?>image.jpg[/IMG]</textarea>
 			</div>
 		</div>
 	</div>
