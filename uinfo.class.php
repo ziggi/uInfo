@@ -5,8 +5,8 @@
  * This class getting information about your IP, browser and OS.
  *
  * @author Sergey Marochkin <xziggix@gmail.com>
- * @version 1.5
- * @copyright 2012 Sergey Marochkin
+ * @version 1.7
+ * @copyright 2012-2013 Sergey Marochkin
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3
  */
 
@@ -68,7 +68,7 @@ class uInfo {
 		$u_agent = $this->user_agent;
 		$browser_name = array(
 			"OPR" => "Opera",
-			"YaBrowser" => "Яндекс.Браузер",
+			"YaBrowser" => "Yandex.Browser",
 			"UCBrowser" => "UC Browser",
 			"CriOS" => "Google Chrome",
 			"Chrome" => "Google Chrome",
@@ -190,6 +190,3 @@ class uInfo {
 		return $result;
 	}
 }
-
-
-?>
