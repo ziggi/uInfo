@@ -17,8 +17,8 @@ $user = new uInfo($_SERVER["HTTP_USER_AGENT"]);
 	<meta name="keywords" content="ip адрес, узнать ip адрес, мой ip, мой браузер, моя ос, узнать браузер, узнать ОС">
 	<meta name="viewport" content="width=device-width">
 	<title>uInfo - Информация о вас</title>
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
