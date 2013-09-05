@@ -6,7 +6,7 @@ $user = new uInfo($_SERVER['HTTP_USER_AGENT']);
 
 header("Content-type: image/jpeg");
 
-$img = imagecreatefromjpeg("images/type1.jpg");
+$img = imagecreatefromjpeg("img/type1.jpg");
 
 imagewritestring($img, 14, $user->host('ip'));
 imagewritestring($img, 12, $user->host('name'));

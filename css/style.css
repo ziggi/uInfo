@@ -1,5 +1,5 @@
 body {
-	background-image: url('images/background.jpg');
+	background-image: url('../img/background.jpg');
 	font-family: sans-serif;
 	margin: 0;
 	padding: 0;
@@ -15,7 +15,7 @@ body {
 
 #content {
 	padding: 10px 0 10px 0;
-	background-image: url('images/op_bg.png');
+	background-image: url('../img/op_bg.png');
 	border-radius: 10px;
 }
 
