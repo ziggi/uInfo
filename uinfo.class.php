@@ -7,7 +7,7 @@
  * @author Sergey Marochkin <xziggix@gmail.com>
  * @version 1.7
  * @copyright 2012-2013 Sergey Marochkin
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3
+ * @license The MIT License
  */
 
 class uInfo {
