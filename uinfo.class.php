@@ -142,6 +142,7 @@ class uInfo {
 			"ipod" => "iOS(iPod)",
 			"ipad" => "iOS(iPad)",
 			"iphone" => "iOS(iPhone)",
+			"SymbOS" => "Symbian",
 		);
 		$os_version = array(
 			"windows 95" => "95",
