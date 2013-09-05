@@ -143,6 +143,7 @@ class uInfo {
 			"ipad" => "iOS(iPad)",
 			"iphone" => "iOS(iPhone)",
 			"SymbOS" => "Symbian",
+			"Windows Phone OS" => "Windows Phone",
 		);
 		$os_version = array(
 			"windows 95" => "95",
@@ -153,6 +154,7 @@ class uInfo {
 			"Windows NT 6.0" => "Vista",
 			"Windows NT 6.1" => "7",
 			"Windows NT 6.2" => "8",
+			"Windows Phone OS" => null,
 			"Android" => null,
 			"OS X" => null,
 			"CPU OS" => null,
