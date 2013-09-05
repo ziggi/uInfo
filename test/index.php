@@ -1,7 +1,7 @@
 <?php
-include "uinfo.class.php";
+include "../uinfo.class.php";
 
-$handle = fopen(__DIR__ . "/for_test.txt", "r");
+$handle = fopen("/for_test.txt", "r");
 
 if (!$handle) {
 	exit;
