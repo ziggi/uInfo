@@ -67,6 +67,7 @@ class uInfo {
         $result = null;
         $u_agent = $this->user_agent;
         $browser_name = array(
+            "Steam" => "Steam Browser",
             "Konqueror" => "Konqueror",
             "OPR" => "Opera",
             "YaBrowser" => "Yandex.Browser",
@@ -80,6 +81,7 @@ class uInfo {
             "Opera" => "Opera",
         );
         $browser_version = array(
+            "Steam" => 1,
             "Konqueror" => 1,
             "OPR" => 1,
             "YaBrowser" => 1,
