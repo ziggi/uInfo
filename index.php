@@ -2,8 +2,10 @@
 
 include "uinfo.class.php";
 
-define("SITE_URL", "http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]);
-define("ENGINE_VERSION", "1.7");
+$site = array(
+	"uri" => "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"],
+	"version" => "2.0",
+	);
 
 $user = new uInfo($_SERVER["HTTP_USER_AGENT"]);
 
@@ -24,7 +26,7 @@ $user = new uInfo($_SERVER["HTTP_USER_AGENT"]);
 <body>
 
 <div id="info">
-	<span>uInfo v<?=ENGINE_VERSION?></span>
+	<span>uInfo v<?php echo $site['version']; ?></span>
 	<span><a href="https://github.com/ziggi/uInfo" target="_blank">GitHub</a></span>
 	<span><a href="http://ziggi.org/" target="_blank">Home</a></span>
 </div>
@@ -32,28 +34,28 @@ $user = new uInfo($_SERVER["HTTP_USER_AGENT"]);
 <div id="middle">
   <div id="content">
 	<div id="text">
-		<div id="ip"><?=$user->host("ip")?></div>
+		<div id="ip"><?php echo $user->host->ip; ?></div>
 		<div id="list">
 			<table>
-				<tr><td>Computer name:</td><td><?=$user->host("name")?></td></tr>
-				<tr><td>Operating system:</td><td><?=$user->os("name")." ".$user->os("version")?></td></tr>
-				<tr><td>Browser:</td><td><?=$user->browser("name")." ".$user->browser("version")?></td></tr>
+				<tr><td>Computer name:</td><td><?php echo $user->host->name; ?></td></tr>
+				<tr><td>Operating system:</td><td><?php echo $user->os->name . " " . $user->os->version; ?></td></tr>
+				<tr><td>Browser:</td><td><?php echo $user->browser->name . " " . $user->browser->version; ?></td></tr>
 			</table>
 		</div>
 	</div>
 	
 	<div id="img">
 		<div id="image">
-			<img src="<?=SITE_URL?>image.jpg">
+			<img src="<?php echo $site['uri']; ?>image.jpg">
 		</div>
 		<div id="img_links">
 			<div class="link">
 				<div class="link_text">HTML code:</div>
-				<textarea onClick="select()"><img src="<?=SITE_URL?>image.jpg"></textarea>
+				<textarea onClick="select()"><img src="<?php echo $site['uri']; ?>image.jpg"></textarea>
 			</div>
 			<div class="link">
 				<div class="link_text">BB code:</div>
-				<textarea onClick="select()">[img]<?=SITE_URL?>image.jpg[/img]</textarea>
+				<textarea onClick="select()">[img]<?php echo $site['uri']; ?>image.jpg[/img]</textarea>
 			</div>
 		</div>
 	</div>
