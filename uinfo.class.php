@@ -65,7 +65,6 @@ class uInfo {
     public function browser($in_param)
     {
         $result = null;
-        $u_agent = $this->user_agent;
         $browser_name = array(
             "Steam" => "Steam Browser",
             "Konqueror" => "Konqueror",
