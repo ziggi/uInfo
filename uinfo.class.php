@@ -32,6 +32,11 @@ class uInfo {
             "version" => 1,
             ),
 
+        "EVE-IGB" => array(
+            "name" => "EVE Browser",
+            "version" => 0,
+            ),
+
         "Konqueror" => array(
             "name" => "Konqueror",
             "version" => 1,
@@ -292,7 +297,7 @@ class uInfo {
                     if (($pos = array_search($key, $array)) !== false) {
                         if ($value['version'] < 0) {
                             $result = end($array);
-                        } else {
+                        } else if ($value['version'] > 0) {
                             $result = $array[ $pos + $value['version'] ];
                         }
                         break;
