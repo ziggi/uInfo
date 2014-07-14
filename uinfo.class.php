@@ -27,6 +27,11 @@ class uInfo {
      */
 
     private $_browser = array(
+        "Breach" => array(
+            "name" => "Breach",
+            "version" => 0,
+            ),
+
         "Steam" => array(
             "name" => "Steam Browser",
             "version" => 1,
