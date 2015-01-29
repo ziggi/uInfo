@@ -91,7 +91,7 @@ class uInfo {
         // Opera Mini
         "Mini" => array(
             "name" => "Opera Mini",
-            "version" => 1,
+            "version" => -1,
             ),
 
         "Opera" => array(
