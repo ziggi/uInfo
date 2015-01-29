@@ -27,6 +27,11 @@ class uInfo {
      */
 
     private $_browser = array(
+        "Vivaldi" => array(
+            "name" => "Vivaldi",
+            "version" => 1,
+            ),
+
         "Breach" => array(
             "name" => "Breach",
             "version" => 0,

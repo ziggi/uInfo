@@ -12,6 +12,7 @@ while (($string = fgets($handle)) !== false) {
 	$user = new uInfo($string);
 
 	echo "String: $line<br>";
+	echo $string . "<br>";
 	echo "OS: " . $user->os->name . " " . $user->os->version . "<br>";
 	echo "BR: " . $user->browser->name . " " . $user->browser->version . "<br><br>";
 	$line++;
