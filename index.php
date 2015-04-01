@@ -4,7 +4,7 @@ include "uinfo.class.php";
 
 $site = array(
 	"uri" => "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"],
-	"version" => "2.0",
+	"version" => "2.1",
 	);
 
 $user = new uInfo($_SERVER["HTTP_USER_AGENT"]);
