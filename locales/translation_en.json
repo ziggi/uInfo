@@ -1,0 +1,20 @@
+{
+	"app": {
+		"name": "uInfo",
+		"title": "__appName__ - Information about you",
+		"github": "GitHub",
+		"home": "Home",
+		"htmlcode": "HTML code:",
+		"bbcode": "BB code:"
+	},
+	"info": {
+		"computer_name": "Computer name:",
+		"os": "Operating system:",
+		"browser": "Browser:",
+		"city": "City:",
+		"region": "Region:",
+		"country": "Country:",
+		"location": "Location:",
+		"organization": "Organization:"
+	}
+}
