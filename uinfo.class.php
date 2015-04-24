@@ -5,8 +5,8 @@
  * This class getting information about your IP, browser and OS.
  *
  * @author Sergey Marochkin <me@ziggi.org>
- * @version 2.0
- * @copyright 2012-2013 Sergey Marochkin
+ * @version 2.2
+ * @copyright 2012-2015 Sergey Marochkin
  * @license The MIT License
  */
 
@@ -233,16 +233,20 @@ class uInfo {
      * Sets $user_agent to a new HTTP_USER_AGENT value
      *
      * @param string $http_user_agent a HTTP_USER_AGENT
+     * @param string $ip_address a ip address
      * @return void
      */
     
     function __construct($http_user_agent, $ip_address = null)
     {
+        $this->_userAgent = $http_user_agent;
+        
         if (is_null($ip_address)) {
             $ip_address = $_SERVER["REMOTE_ADDR"];
+        } else {
+            $this->_ip = $ip_address;
         }
-        $this->_userAgent = $http_user_agent;
-        $this->_ip = $ip_address;
+
         $this->_ipInfo = json_decode(@file_get_contents("http://ipinfo.io/" . $this->_ip));
     }
 
@@ -284,7 +288,7 @@ class uInfo {
      * Getting host information
      * 
      * @param string $param type of information about the host
-     * @return string your ip or hostname
+     * @return string your ip, hostname or other information
      */
     
     public function get_host($param)
