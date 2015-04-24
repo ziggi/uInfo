@@ -2,7 +2,7 @@
 
 include "uinfo.class.php";
 
-$user = new uInfo($_SERVER['HTTP_USER_AGENT']);
+$user = new uInfo($_SERVER['HTTP_USER_AGENT'], $_SERVER["REMOTE_ADDR"]);
 
 header("Content-type: image/jpeg");
 

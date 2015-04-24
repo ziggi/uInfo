@@ -1,15 +1,16 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,700,300,400&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,400&subset=cyrillic,latin);
 
 body {
 	background-image: url('../img/background.jpg');
 	margin: 0;
 	padding: 0;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
 }
 
 #middle {
 	width: 500px;
-	height: 70%;
+	height: 80%;
 	margin: auto;
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
@@ -96,7 +97,7 @@ body {
 #info span, #info a {
 	color: #aaa;
 	font-size: 12px;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 #info span {
