@@ -243,7 +243,7 @@ class uInfo {
 		
 		$this->_ip = $ip_address;
 		if (!is_null($this->_ip)) {
-			$this->_ipInfo = json_decode(@file_get_contents("http://ipinfo.io/" . $this->_ip));
+			$this->_ipInfo = json_decode(@file_get_contents("http://ipinfo.io/" . $this->_ip . "/json"));
 		}
 	}
 
