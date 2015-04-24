@@ -23,6 +23,22 @@ class uInfo {
     /**
      * A private variable
      *
+     * @var string contains ip address
+     */
+
+    private $_ip;
+
+    /**
+     * A private variable
+     *
+     * @var object contains ip information
+     */
+
+    private $_ipInfo;
+
+    /**
+     * A private variable
+     *
      * @var string contains configuration for browsers
      */
 
@@ -220,9 +236,14 @@ class uInfo {
      * @return void
      */
     
-    function __construct($http_user_agent)
+    function __construct($http_user_agent, $ip_address = null)
     {
+        if (is_null($ip_address)) {
+            $ip_address = $_SERVER["REMOTE_ADDR"];
+        }
         $this->_userAgent = $http_user_agent;
+        $this->_ip = $ip_address;
+        $this->_ipInfo = json_decode(@file_get_contents("http://ipinfo.io/" . $this->_ip));
     }
 
     /**
@@ -272,11 +293,31 @@ class uInfo {
         
         switch ($param) {
             case "ip":
-                $result = $_SERVER["REMOTE_ADDR"];
+                $result = $this->_ip;
                 break;
             
             case "name":
-                $result = gethostbyaddr($_SERVER["REMOTE_ADDR"]);
+                $result = gethostbyaddr($this->_ip);
+                break;
+
+            case "city":
+                $result = $this->_ipInfo->city;
+                break;
+
+            case "region":
+                $result = $this->_ipInfo->region;
+                break;
+
+            case "country":
+                $result = $this->_ipInfo->country;
+                break;
+
+            case "loc":
+                $result = $this->_ipInfo->loc;
+                break;
+
+            case "org":
+                $result = $this->_ipInfo->org;
                 break;
         }
         
