@@ -241,13 +241,10 @@ class uInfo {
 	{
 		$this->_userAgent = $http_user_agent;
 		
-		if (is_null($ip_address)) {
-			$ip_address = $_SERVER["REMOTE_ADDR"];
-		} else {
-			$this->_ip = $ip_address;
+		$this->_ip = $ip_address;
+		if (!is_null($this->_ip)) {
+			$this->_ipInfo = json_decode(@file_get_contents("http://ipinfo.io/" . $this->_ip));
 		}
-
-		$this->_ipInfo = json_decode(@file_get_contents("http://ipinfo.io/" . $this->_ip));
 	}
 
 	/**
@@ -301,7 +298,9 @@ class uInfo {
 				break;
 			
 			case "name":
-				$result = gethostbyaddr($this->_ip);
+				if (!is_null($this->_ip)) {
+					$result = gethostbyaddr($this->_ip);
+				}
 				break;
 
 			case "city":
