@@ -301,23 +301,33 @@ class uInfo {
                 break;
 
             case "city":
-                $result = $this->_ipInfo->city;
+                if (isset($this->_ipInfo->city)) {
+                    $result = $this->_ipInfo->city;
+                }
                 break;
 
             case "region":
-                $result = $this->_ipInfo->region;
+                if (isset($this->_ipInfo->region)) {
+                    $result = $this->_ipInfo->region;
+                }
                 break;
 
             case "country":
-                $result = $this->_ipInfo->country;
+                if (isset($this->_ipInfo->country)) {
+                    $result = $this->_ipInfo->country;
+                }
                 break;
 
             case "loc":
-                $result = $this->_ipInfo->loc;
+                if (isset($this->_ipInfo->loc)) {
+                    $result = $this->_ipInfo->loc;
+                }
                 break;
 
             case "org":
-                $result = $this->_ipInfo->org;
+                if (isset($this->_ipInfo->org)) {
+                    $result = $this->_ipInfo->org;
+                }
                 break;
         }
         
