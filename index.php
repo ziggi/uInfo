@@ -7,7 +7,7 @@ $site = array(
 	"version" => "2.1",
 	);
 
-$user = new uInfo($_SERVER["HTTP_USER_AGENT"]);
+$user = new uInfo($_SERVER["HTTP_USER_AGENT"], "91.238.231.242");
 
 ?>
 <!DOCTYPE html>
@@ -40,6 +40,11 @@ $user = new uInfo($_SERVER["HTTP_USER_AGENT"]);
 				<tr><td>Computer name:</td><td><?php echo $user->host->name; ?></td></tr>
 				<tr><td>Operating system:</td><td><?php echo $user->os->name . " " . $user->os->version; ?></td></tr>
 				<tr><td>Browser:</td><td><?php echo $user->browser->name . " " . $user->browser->version; ?></td></tr>
+				<tr><td>City:</td><td><?php echo $user->host->city; ?></td></tr>
+				<tr><td>Region:</td><td><?php echo $user->host->region; ?></td></tr>
+				<tr><td>Country:</td><td><?php echo $user->host->country; ?></td></tr>
+				<tr><td>Location:</td><td><?php echo $user->host->loc; ?></td></tr>
+				<tr><td>Organisation:</td><td><?php echo $user->host->org; ?></td></tr>
 			</table>
 		</div>
 	</div>

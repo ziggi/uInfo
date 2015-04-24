@@ -1,8 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,700,300,400&subset=latin,cyrillic);
+
 body {
 	background-image: url('../img/background.jpg');
-	font-family: sans-serif;
 	margin: 0;
 	padding: 0;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #middle {
@@ -16,7 +18,7 @@ body {
 #content {
 	padding: 10px 0 10px 0;
 	background-image: url('../img/op_bg.png');
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 #text {
@@ -31,14 +33,20 @@ body {
 }
 
 #list table {
-	margin: 0 auto;
 	font-size: 0.75em;
+	margin: 0 auto 10px;
 }
 
 #list table td:nth-child(1) {
 	text-align: right;
 	padding-right: 2px;
 	color: #444;
+	vertical-align: top;
+	width: 50%;
+}
+
+#list table td:nth-child(2) {
+	width: 200px;
 }
 
 #img {
@@ -74,12 +82,7 @@ body {
 	right: 0px;
 	z-index: 1;
 	height: 20px;
-	line-height: 20px;
-	background-color: #222;
-	border: 1px solid #444;
-	border-top: 0px;
-	border-right: 0px;
-	box-shadow: 0px 0px 10px #444;
+	text-shadow: 1px 2px 3px rgba(0,0,0,0.3);
 }
 
 #info a {
@@ -91,7 +94,7 @@ body {
 }
 
 #info span, #info a {
-	color: #777;
+	color: #aaa;
 	font-size: 12px;
 	font-weight: bold;
 }
