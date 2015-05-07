@@ -9,7 +9,7 @@ header("Content-type: image/jpeg");
 $img = imagecreatefromjpeg("img/type1.jpg");
 
 imagewritestring($img, 14, $user->host->ip);
-imagewritestring($img, 12, $user->host->name);
+imagewritestring($img, 12, $user->host->city);
 imagewritestring($img, 12, $user->os->name . " " . $user->os->version);
 imagewritestring($img, 12, $user->browser->name . " " . $user->browser->version);
 
