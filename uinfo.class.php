@@ -43,6 +43,11 @@ class uInfo {
 	 */
 
 	private $_browser = array(
+		"Midori" => array(
+			"name" => "Midori",
+			"version" => 1,
+			),
+
 		"SputnikBrowser" => array(
 			"name" => "Sputnik Browser",
 			"version" => 1,
