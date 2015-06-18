@@ -198,6 +198,11 @@ class uInfo {
 			"version" => "8",
 			),
 
+		"Windows NT 10.0" => array(
+			"name" => "Windows",
+			"version" => "10",
+			),
+
 		"Android" => array(
 			"name" => "Android",
 			"version" => null,
