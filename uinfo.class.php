@@ -43,6 +43,11 @@ class uInfo {
 	 */
 
 	private $_browser = array(
+		"Edge" => array(
+			"name" => "Microsoft Edge",
+			"version" => 1,
+			),
+
 		"Midori" => array(
 			"name" => "Midori",
 			"version" => 1,
