@@ -15,9 +15,6 @@ window.addEventListener('load', function() {
 		});
 
 		document.title = i18n.t('app.title', {appName: i18n.t('app.name')});
-		
-		elem = document.querySelector('[data-i18n="app.fullname"]');
-		elem.innerHTML = i18n.t('app.name') + ' ' + elem.innerHTML;
 
 		document.dispatchEvent(event_init);
 	});
