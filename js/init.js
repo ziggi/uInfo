@@ -3,20 +3,26 @@ window.addEventListener('load', function() {
 
 	// i18n init
 	var option = {
-		resGetPath: 'locales/__ns_____lng__.json',
-		fallbackLng: 'en'
+		load: 'languageOnly',
+		fallbackLng: 'en',
+		backend: {
+			loadPath: 'locales/{{ns}}_{{lng}}.json'
+		}
 	};
 
-	i18n.init(option, function() {
-		[].forEach.call(document.querySelectorAll('[data-i18n]'), function(element) {
-			if (element.dataset.i18n != i18n.t(element.dataset.i18n)) {
-				element.innerHTML = i18n.t(element.dataset.i18n);
-			}
-		});
+	i18next
+		.use(i18nextXHRBackend)
+		.use(i18nextBrowserLanguageDetector)
+		.init(option, function(err, t) {
+			[].forEach.call(document.querySelectorAll('[data-i18n]'), function(element) {
+				if (element.dataset.i18n != t(element.dataset.i18n)) {
+					element.innerHTML = t(element.dataset.i18n);
+				}
+			});
 
-		document.title = i18n.t('app.title', {appName: i18n.t('app.name')});
+			document.title = t('app.title', {appName: t('app.name')});
 
-		document.dispatchEvent(event_init);
+			document.dispatchEvent(event_init);
 	});
 
 });

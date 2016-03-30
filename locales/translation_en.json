@@ -1,7 +1,7 @@
 {
 	"app": {
 		"name": "uInfo",
-		"title": "__appName__ - Information about you",
+		"title": "{{appName}} - Information about you",
 		"github": "GitHub",
 		"home": "Home",
 		"htmlcode": "HTML code:",

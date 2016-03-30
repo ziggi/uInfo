@@ -68,7 +68,9 @@ $user = new uInfo($_SERVER["HTTP_USER_AGENT"], $_SERVER["REMOTE_ADDR"]);
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<script src="js/i18next-1.8.0.min.js"></script>
+<script src="js/i18next-2.4.0.min.js"></script>
+<script src="js/i18nextXHRBackend.min.js"></script>
+<script src="js/i18nextBrowserLanguageDetector.min.js"></script>
 <script src="js/init.js"></script>
 
 </body>
