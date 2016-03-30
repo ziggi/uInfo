@@ -17,7 +17,7 @@ class uInfo {
 	 *
 	 * @var string contains HTTP_USER_AGENT for the class
 	 */
-	
+
 	private $_userAgent;
 
 	/**
@@ -86,6 +86,11 @@ class uInfo {
 		// opera on blink
 		"OPR" => array(
 			"name" => "Opera",
+			"version" => 1,
+			),
+
+		"Coast" => array(
+			"name" => "Opera Coast",
 			"version" => 1,
 			),
 
@@ -162,7 +167,7 @@ class uInfo {
 			"name" => "OS X",
 			"version" => null,
 			),
-			
+
 		"Windows 95" => array(
 			"name" => "Windows",
 			"version" => "95",
@@ -251,11 +256,11 @@ class uInfo {
 	 * @param string $ip_address a ip address
 	 * @return void
 	 */
-	
+
 	function __construct($http_user_agent, $ip_address = null)
 	{
 		$this->_userAgent = $http_user_agent;
-		
+
 		$this->_ip = $ip_address;
 		if (!is_null($this->_ip)) {
 			$this->_ipInfo = json_decode(@file_get_contents("http://ipinfo.io/" . $this->_ip . "/json"));
@@ -278,7 +283,7 @@ class uInfo {
 				case "host":
 					$result = $this->get_host($param);
 					break;
-				
+
 				case "browser":
 					$result = $this->get_browser($param);
 					break;
@@ -295,23 +300,23 @@ class uInfo {
 			return $this;
 		}
 	}
-	
+
 	/**
 	 * Getting host information
-	 * 
+	 *
 	 * @param string $param type of information about the host
 	 * @return string your ip, hostname or other information
 	 */
-	
+
 	public function get_host($param)
 	{
 		$result = null;
-		
+
 		switch ($param) {
 			case "ip":
 				$result = $this->_ip;
 				break;
-			
+
 			case "name":
 				if (!is_null($this->_ip)) {
 					$result = gethostbyaddr($this->_ip);
@@ -348,13 +353,13 @@ class uInfo {
 				}
 				break;
 		}
-		
+
 		return $result;
 	}
-	
+
 	/**
 	 * Getting browser information
-	 * 
+	 *
 	 * @param string $param type of information about the browser
 	 * @return string your browser name or version
 	 */
@@ -362,7 +367,7 @@ class uInfo {
 	public function get_browser($param)
 	{
 		$result = null;
-		
+
 		switch ($param) {
 			case "name":
 				foreach ($this->_browser as $key => $value) {
@@ -372,10 +377,10 @@ class uInfo {
 					}
 				}
 				break;
-			
+
 			case "version":
 				$pos = null;
-				
+
 				$array = preg_split("/[\/ ;]/", $this->_userAgent);
 				foreach ($this->_browser as $key => $value) {
 					if (($pos = array_search($key, $array)) !== false) {
@@ -392,10 +397,10 @@ class uInfo {
 
 		return $result;
 	}
-	
+
 	/**
 	 * Getting operating system information
-	 * 
+	 *
 	 * @param string $param type of information about the OS
 	 * @return string your OS name or version
 	 */
@@ -403,7 +408,7 @@ class uInfo {
 	public function get_os($param)
 	{
 		$result = null;
-		
+
 		switch ($param) {
 			case "name":
 				foreach ($this->_os as $key => $value) {
@@ -412,7 +417,7 @@ class uInfo {
 					}
 				}
 				break;
-			
+
 			case "version":
 				foreach ($this->_os as $key => $value) {
 					if (preg_match("/".$key."/", $this->_userAgent)) {
@@ -430,7 +435,7 @@ class uInfo {
 				}
 				break;
 		}
-		
+
 		return $result;
 	}
 }
