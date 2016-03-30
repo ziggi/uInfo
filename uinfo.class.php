@@ -4,9 +4,9 @@
  *
  * This class getting information about your IP, browser and OS.
  *
- * @author Sergey Marochkin <me@ziggi.org>
+ * @author Sergei Marochkin <me@ziggi.org>
  * @version 2.2
- * @copyright 2012-2015 Sergey Marochkin
+ * @copyright 2012-2016 Sergei Marochkin
  * @license The MIT License
  */
 
@@ -70,7 +70,7 @@ class uInfo {
 
 		"Steam" => array(
 			"name" => "Steam Browser",
-			"version" => 1,
+			"version" => 0,
 			),
 
 		"EVE-IGB" => array(
