@@ -119,6 +119,11 @@ class uInfo {
 			"version" => 1,
 			),
 
+		"Trident" => array(
+			"name" => "Internet Explorer",
+			"version" => 4,
+			),
+
 		"Firefox" => array(
 			"name" => "Mozilla Firefox",
 			"version" => 1,
@@ -381,7 +386,7 @@ class uInfo {
 			case "version":
 				$pos = null;
 
-				$array = preg_split("/[\/ ;]/", $this->_userAgent);
+				$array = preg_split("/[\/ ;:()]/", $this->_userAgent);
 				foreach ($this->_browser as $key => $value) {
 					if (($pos = array_search($key, $array)) !== false) {
 						if ($value['version'] < 0) {
