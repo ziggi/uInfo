@@ -20,6 +20,7 @@ body {
 	padding: 10px 0 10px 0;
 	background-image: url('../img/op_bg.png');
 	border-radius: 5px;
+	margin: 10px 0;
 }
 
 #text {
