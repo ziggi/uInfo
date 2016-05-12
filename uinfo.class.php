@@ -5,7 +5,7 @@
  * This class getting information about your IP, browser and OS.
  *
  * @author Sergei Marochkin <me@ziggi.org>
- * @version 2.2
+ * @version 2.3
  * @copyright 2012-2016 Sergei Marochkin
  * @license The MIT License
  */
