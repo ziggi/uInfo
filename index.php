@@ -3,7 +3,7 @@
 include "uinfo.class.php";
 
 $site = array(
-	"uri" => "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"],
+	"uri" => "//" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"],
 	"version" => "2.3",
 	);
 
@@ -27,7 +27,7 @@ $user = new uInfo($_SERVER["HTTP_USER_AGENT"], $_SERVER["REMOTE_ADDR"]);
 <div id="info">
 	<span><span data-i18n="app.name">uInfo</span> <?php echo $site['version']; ?></span>
 	<span><a href="https://github.com/ziggi/uInfo" target="_blank" data-i18n="app.github">GitHub</a></span>
-	<span><a href="http://ziggi.org/" target="_blank" data-i18n="app.home">Home</a></span>
+	<span><a href="https://ziggi.org/" target="_blank" data-i18n="app.home">Home</a></span>
 </div>
 
 <div id="middle">
