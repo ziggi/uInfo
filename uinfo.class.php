@@ -39,6 +39,14 @@ class uInfo {
 	/**
 	 * A private variable
 	 *
+	 * @var string contains current data group for __get
+	 */
+
+	private $_pointer = null;
+
+	/**
+	 * A private variable
+	 *
 	 * @var string contains configuration for browsers
 	 */
 
@@ -264,11 +272,14 @@ class uInfo {
 
 	function __construct($http_user_agent, $ip_address = null)
 	{
-		$this->_userAgent = $http_user_agent;
+		$this->_userAgent = (string)$http_user_agent;
 
 		$this->_ip = $ip_address;
 		if (!is_null($this->_ip)) {
-			$this->_ipInfo = json_decode(@file_get_contents("http://ipinfo.io/" . $this->_ip . "/json"));
+			$json = @file_get_contents("https://ipinfo.io/" . $this->_ip . "/json");
+			if ($json !== false) {
+				$this->_ipInfo = json_decode($json);
+			}
 		}
 	}
 
@@ -323,7 +334,7 @@ class uInfo {
 				break;
 
 			case "name":
-				if (!is_null($this->_ip)) {
+				if (filter_var($this->_ip, FILTER_VALIDATE_IP) !== false) {
 					$result = gethostbyaddr($this->_ip);
 				}
 				break;
@@ -392,7 +403,7 @@ class uInfo {
 						if ($value['version'] < 0) {
 							$result = end($array);
 						} else if ($value['version'] > 0) {
-							$result = $array[ $pos + $value['version'] ];
+							$result = isset($array[ $pos + $value['version'] ]) ? $array[ $pos + $value['version'] ] : null;
 						}
 						break;
 					}

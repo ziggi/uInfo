@@ -10,7 +10,7 @@
  * @license The MIT License
  */
 
-include_once "../uinfo.class.php";
+include_once __DIR__ . "/../uinfo.class.php";
 
 class Test {
 

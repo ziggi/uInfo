@@ -3,11 +3,14 @@
 include "uinfo.class.php";
 
 $site = array(
-	"uri" => "//" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"],
+	"uri" => "//" . (isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : "") . (isset($_SERVER["REQUEST_URI"]) ? $_SERVER["REQUEST_URI"] : "/"),
 	"version" => "2.3",
 	);
 
-$user = new uInfo($_SERVER["HTTP_USER_AGENT"], $_SERVER["REMOTE_ADDR"]);
+$user = new uInfo(
+	isset($_SERVER["HTTP_USER_AGENT"]) ? $_SERVER["HTTP_USER_AGENT"] : "",
+	isset($_SERVER["REMOTE_ADDR"]) ? $_SERVER["REMOTE_ADDR"] : null
+);
 
 ?>
 <!DOCTYPE html>
